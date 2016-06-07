@@ -1,0 +1,78 @@
+<html ng-app="HelloApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="angular-fusioncharts.min.js"></script>
+    <script src="fusioncharts.js"></script>
+</head>
+<body ng-controller="MyController">
+<div >
+ <fusioncharts 
+    id="mychartcontainer"
+    chartid="mychart"
+    width="400" height="200" type="line" datasource="{{myDataSource}}">
+ </fusioncharts>
+</div>
+
+<script>
+    	var app = angular.module('HelloApp', ["ng-fusioncharts"]);
+
+		app.controller('MyController', function ($scope) {
+		    $scope.myDataSource = {
+			    "chart": {
+			        "caption": "Total Revenues from 2008-2013",
+			        "numberprefix": "$",
+			        "bgcolor": "FFFFFF",
+			        "showalternatehgridcolor": "0",
+			        "plotbordercolor": "008ee4",
+			        "plotborderthickness": "3",
+			        "showvalues": "0",
+			        "divlinecolor": "CCCCCC",
+			        "showcanvasborder": "0",
+			        "tooltipbgcolor": "00396d",
+			        "tooltipcolor": "FFFFFF",
+			        "tooltipbordercolor": "00396d",
+			        "numdivlines": "2",
+			        "yaxisvaluespadding": "20",
+			        "anchorbgcolor": "008ee4",
+			        "anchorborderthickness": "0",
+			        "showshadow": "0",
+			        "anchorradius": "4",
+			        "chartrightmargin": "25",
+			        "canvasborderalpha": "0",
+			        "showborder": "0"
+			    },
+			    "data": [
+			        {
+			            "label": "2009",
+			            "value": "4400000",
+			            "color": "008ee4"
+			        },
+			        {
+			            "label": "2010",
+			            "value": "4800000",
+			            "color": "008ee4"
+			        },
+			        {
+			            "label": "2011",
+			            "value": "5500000",
+			            "color": "008ee4"
+			        },
+			        {
+			            "label": "2012",
+			            "value": "6700000",
+			            "color": "008ee4",
+			            "anchorradius": "7",
+			            "tooltext": "Historical high"
+			        },
+			        {
+			            "label": "2013",
+			            "value": "4200000",
+			            "color": "008ee4"
+			        }
+			    ]
+			}
+
+		});
+</script>
+</body>
+</html>

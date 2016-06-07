@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="google-chart-sample">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="ng-google-chart.js"></script>
+</head>
+<body ng-controller="AnnotationChartCtrl">
+    <div google-chart chart="myChartObject" style="height:600px; width:100%;"></div>
+    <script>
+    	angular.module("google-chart-sample", ["googlechart"])
+    	.controller("AnnotationChartCtrl", function ($scope) {
+	        $scope.myChartObject = {};
+    
+		    $scope.myChartObject.type = "LineChart";
+		    
+		    $scope.onions = [
+		        {v: "Onions"},
+		        {v: 3},
+		    ];
+
+		    $scope.myChartObject.data = {"cols": [
+		        {id: "t", label: "Topping", type: "string"},
+		        {id: "s", label: "Slices", type: "number"}
+		    ], "rows": [
+		        {c: [
+		            {v: "Mushrooms"},
+		            {v: 3},
+		        ]},
+		        {c: $scope.onions},
+		        {c: [
+		            {v: "Olives"},
+		            {v: 31}
+		        ]},
+		        {c: [
+		            {v: "Zucchini"},
+		            {v: 10},
+		        ]},
+		        {c: [
+		            {v: "Pepperoni"},
+		            {v: 2},
+		        ]}
+		    ]};
+
+		    $scope.myChartObject.options = {
+		        'title': 'How Much Pizza I Ate Last Night'
+		    };
+    	});
+    </script>
+</body>
+</html>
